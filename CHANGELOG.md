@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/awazevr/minio-pull-action/compare/v1.1.2...v1.1.3) (2022-03-28)
+
+
+### Bug Fixes
+
+* added min-io-uri input ([c9f8cbc](https://github.com/awazevr/minio-pull-action/commit/c9f8cbcb0e797e3b36cd3deeb6bdccc070a3068e))
+
 ## [1.1.2](https://github.com/awazevr/minio-pull-action/compare/v1.1.1...v1.1.2) (2022-03-28)
 
 
