@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/awazevr/minio-pull-action/compare/v1.0.0...v1.1.0) (2022-03-28)
+
+
+### Features
+
+* added steps to the custom action ([3c26c6b](https://github.com/awazevr/minio-pull-action/commit/3c26c6b809bdc2ec02e96b4d546298a01efcb151))
+
 # 1.0.0 (2022-03-28)
 
 
