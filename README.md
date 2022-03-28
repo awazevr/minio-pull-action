@@ -3,7 +3,7 @@ This is a GitHub Action meant to be used as a [composite action](https://docs.gi
 
 The action encapsulates the following other actions:
 
-- [actions/checkout](https://github.com/actions/checkout)
+- [actions/checkout](aws-actions/configure-aws-credentials@master)
 - [zaproxy/action-api-scan](https://github.com/zaproxy/action-api-scan)
 
 
