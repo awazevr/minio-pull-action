@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/awazevr/minio-pull-action/compare/v1.1.1...v1.1.2) (2022-03-28)
+
+
+### Bug Fixes
+
+* fixed incorrect formatting ([357e70a](https://github.com/awazevr/minio-pull-action/commit/357e70a235bfe882a9460a638a698fa5d4cb8dff))
+
 ## [1.1.1](https://github.com/awazevr/minio-pull-action/compare/v1.1.0...v1.1.1) (2022-03-28)
 
 
