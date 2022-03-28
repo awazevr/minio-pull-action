@@ -9,9 +9,9 @@ inputs:
     description: "AWS Resource Region"
     required: true
 
-  # min-io-uri:
-  #   description: "Min.io Resource URI"
-  #   required: true
+  min-io-uri:
+    description: "Min.io Resource URI"
+    required: true
 
   # min-io-access-key-id:
   #   description: "Min.io Resource Access Id"
@@ -48,7 +48,7 @@ runs:
         chmod +x mc
         sudo mv mc /usr/bin
         mc --help
-        mc alias set mycloud/ https://minio.seetransparent.com s3_seetransparent_awaze_rw 9z7AldBwC07T --api S3v4
+        mc alias set mycloud/ ${{ inputs.min-io-uri }} s3_seetransparent_awaze_rw 9z7AldBwC07T --api S3v4
         mc ls mycloud/seetransparent-awaze/
         mc cp mycloud/seetransparent-awaze/Supply_sample.csv .
         mv ./Supply_sample.csv Supply_sample_$(date +%d-%m-%Y).csv
