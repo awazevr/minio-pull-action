@@ -13,21 +13,25 @@ inputs:
     description: "Min.io Resource URI"
     required: true
 
-  # min-io-access-key-id:
-  #   description: "Min.io Resource Access Id"
-  #   required: true
+  min-io-access-key-id:
+    description: "Min.io Resource Access Id"
+    required: true
+    # default: "s3_seetransparent_awaze_rw"
 
-  # min-io-access-secret-key:
-  #   description: "Min.io Resource secret key"
-  #   required: true
+  min-io-access-secret-key:
+    description: "Min.io Resource secret key"
+    required: true
+    # default: "9z7AldBwC07T"
 
-  # min-io-folder:
-  #   description: "Min.io Resource folder location"
-  #   required: true
+  min-io-folder:
+    description: "Min.io Resource folder location"
+    required: true
+    # default: "seetransparent-awaze"
 
-  # min-io-asset-name:
-  #   description: "Min.io Resource file name"
-  #   required: true
+  min-io-asset-name:
+    description: "Min.io Resource file name"
+    required: true
+    # default: "Supply_sample.csv"
 
 runs:
   using: "composite"
@@ -48,9 +52,9 @@ runs:
         chmod +x mc
         sudo mv mc /usr/bin
         mc --help
-        mc alias set mycloud/ ${{ inputs.min-io-uri }} s3_seetransparent_awaze_rw 9z7AldBwC07T --api S3v4
-        mc ls mycloud/seetransparent-awaze/
-        mc cp mycloud/seetransparent-awaze/Supply_sample.csv .
+        mc alias set mycloud/ ${{ inputs.min-io-uri }} ${{ inputs.min-io-access-key-id }} ${{ inputs.min-io-access-secret-key }} --api S3v4
+        mc ls mycloud/${{ inputs.min-io-folder }}/
+        mc cp mycloud/seetransparent-awaze/${{ inputs.min-io-asset-name }} .
         mv ./Supply_sample.csv Supply_sample_$(date +%d-%m-%Y).csv
         aws s3 ls
         aws s3 cp ./Supply_sample_$(date +%d-%m-%Y).csv s3://vrukl-bi-qb-dev-ingestion/snowflake/Lake/Transparent/Regular_Feeds/
