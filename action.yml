@@ -1,7 +1,7 @@
 name: "Pull Min.io Asset Action"
 description: "Pull Assets from Min.io and Push to S3."
 inputs:
-  aws-role-to-assume:
+  aws-account-id:
     description: "ARN of the AWS IAM role to assume"
     required: true
 
