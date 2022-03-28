@@ -3,12 +3,12 @@ This is a GitHub Action meant to be used as a [composite action](https://docs.gi
 
 The action encapsulates the following other actions:
 
-- [actions/checkout](aws-actions/configure-aws-credentials@master)
-- [zaproxy/action-api-scan](https://github.com/zaproxy/action-api-scan)
+- [actions/checkout](https://github.com/actions/checkout)
+- [aws-actions/configure-aws-credentials](https://github.com/aws-actions configure-aws-credentials)
 
 
 ## Inputs
-
+****
 ### `target`
 
 **Required** target API definition, OpenAPI or SOAP, local file or URL, e.g. https://www.example.com/openapi.json
