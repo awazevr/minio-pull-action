@@ -43,16 +43,16 @@ runs:
       shell: bash
 
     - name: Pull Data and Push Data from Min.io to s3
-        run: |
-          wget https://dl.min.io/client/mc/release/linux-amd64/mc
-          chmod +x mc
-          sudo mv mc /usr/bin
-          mc --help
-          mc alias set mycloud/ https://minio.seetransparent.com s3_seetransparent_awaze_rw 9z7AldBwC07T --api S3v4
-          mc ls mycloud/seetransparent-awaze/
-          mc cp mycloud/seetransparent-awaze/Supply_sample.csv .
-          mv ./Supply_sample.csv Supply_sample_$(date +%d-%m-%Y).csv
-          aws s3 ls
-          aws s3 cp ./Supply_sample_$(date +%d-%m-%Y).csv s3://vrukl-bi-qb-dev-ingestion/snowflake/Lake/Transparent/Regular_Feeds/
-        shell: bash
+      run: |
+        wget https://dl.min.io/client/mc/release/linux-amd64/mc
+        chmod +x mc
+        sudo mv mc /usr/bin
+        mc --help
+        mc alias set mycloud/ https://minio.seetransparent.com s3_seetransparent_awaze_rw 9z7AldBwC07T --api S3v4
+        mc ls mycloud/seetransparent-awaze/
+        mc cp mycloud/seetransparent-awaze/Supply_sample.csv .
+        mv ./Supply_sample.csv Supply_sample_$(date +%d-%m-%Y).csv
+        aws s3 ls
+        aws s3 cp ./Supply_sample_$(date +%d-%m-%Y).csv s3://vrukl-bi-qb-dev-ingestion/snowflake/Lake/Transparent/Regular_Feeds/
+      shell: bash
     
