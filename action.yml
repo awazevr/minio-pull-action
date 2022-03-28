@@ -29,7 +29,6 @@ inputs:
   #   description: "Min.io Resource file name"
   #   required: true
 
-
 runs:
   using: "composite"
   steps:
