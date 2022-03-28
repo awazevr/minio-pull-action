@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/awazevr/minio-pull-action/compare/v1.1.0...v1.1.1) (2022-03-28)
+
+
+### Bug Fixes
+
+* added steps to the action ([0f52651](https://github.com/awazevr/minio-pull-action/commit/0f52651b9fd6a8e7c427b87b51a56da1012c609c))
+
 # [1.1.0](https://github.com/awazevr/minio-pull-action/compare/v1.0.0...v1.1.0) (2022-03-28)
 
 
