@@ -4,36 +4,35 @@ This is a GitHub Action meant to be used as a [composite action](https://docs.gi
 The action encapsulates the following other actions:
 
 - [actions/checkout](https://github.com/actions/checkout)
-- [aws-actions/configure-aws-credentials](https://github.com/aws-actions configure-aws-credentials)
+- [aws-actions/configure-aws-credentials](https://github.com/aws-actions/configure-aws-credentials)
 
 
 ## Inputs
 ****
-### `target`
+### `aws-account-id`
 
-**Required** target API definition, OpenAPI or SOAP, local file or URL, e.g. https://www.example.com/openapi.json
-or target endpoint URL, GraphQL, e.g. https://www.example.com/graphql
+**Required** AWS Account Id of the IAM Role to assume when interacting with AWS 
 
-### `rules_file_name`
+### `aws-region`
 
-**Required** You can also specify a relative path to the rules file to ignore any alerts from the ZAP scan. Make sure to create
-the rules file inside the relevant repository. The following shows a sample rules file configuration.
-Make sure to checkout the repository (actions/checkout@v2) to provide the ZAP rules to the scan action.
+**Required** AWS Region to use when interacting with AWS 
 
-```tsv
-10011	IGNORE	(Cookie Without Secure Flag)
-10015	IGNORE	(Incomplete or No Cache-control and Pragma HTTP Header Set)
-```
+### `min-io-uri`
 
-### `issue_title`
+**Required** The URI of the resource to connect to at Min.io 
 
-**Required** The title for the GitHub issue to be created.
+### `min-io-access-key-id`
 
+**Required** The Access Key ID to use to connect to at Min.io URI
 
-### `fail_action`
+### `min-io-access-secret-key`
 
-**Required** By default ZAP Docker container will fail with an [exit code](https://github.com/zaproxy/zaproxy/blob/7abbd57f6894c2abf4f1ed00fb95e99c34ef2e28/docker/zap-api-scan.py#L35),
-if it identifies any alerts. Set this option to `true` if you want to fail the status of the GitHub Scan if ZAP identifies any alerts during the scan.
+**Required** The Access Secret Key to use to connect to at Min.io URI
+
+### `min-io-access-secret-key`
+
+**Required** The Access Secret Key to use to connect to at Min.io URI
+
 
 
 ## Usage
