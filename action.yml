@@ -31,7 +31,11 @@ inputs:
   min-io-asset-name:
     description: "Min.io Resource file name"
     required: true
-    # default: "Supply_sample.csv"
+    # default: s3://vrukl-bi-qb-dev-ingestion/snowflake/Lake/Transparent/Regular_Feeds/
+
+  s3-bucket-location:
+    description: "The S3 bucket location to push the data asset to"
+    required: true
 
 runs:
   using: "composite"
@@ -45,6 +49,7 @@ runs:
         role-to-assume: arn:aws:iam::${{ inputs.aws-account-id }}:role/github
     - run: aws sts get-caller-identity
       shell: bash
+      
 
     - name: Pull Data and Push Data from Min.io to s3
       run: |
@@ -57,6 +62,6 @@ runs:
         mc cp mycloud/${{ inputs.min-io-folder }}/${{ inputs.min-io-asset-name }}.csv .
         mv ./${{ inputs.min-io-asset-name }}.csv ${{ inputs.min-io-asset-name }}-$(date +%d-%m-%Y).csv
         aws s3 ls
-        aws s3 cp ./${{ inputs.min-io-asset-name }}-$(date +%d-%m-%Y).csv s3://vrukl-bi-qb-dev-ingestion/snowflake/Lake/Transparent/Regular_Feeds/
+        aws s3 cp ./${{ inputs.min-io-asset-name }}-$(date +%d-%m-%Y).csv ${{ inputs.s3-bucket-location }}
       shell: bash
     
