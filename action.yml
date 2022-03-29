@@ -54,9 +54,9 @@ runs:
         mc --help
         mc alias set mycloud/ ${{ inputs.min-io-uri }} ${{ inputs.min-io-access-key-id }} ${{ inputs.min-io-access-secret-key }} --api S3v4
         mc ls mycloud/${{ inputs.min-io-folder }}/
-        mc cp mycloud/seetransparent-awaze/${{ inputs.min-io-asset-name }} .
-        mv ./Supply_sample.csv Supply_sample_$(date +%d-%m-%Y).csv
+        mc cp mycloud/${{ inputs.min-io-folder }}/${{ inputs.min-io-asset-name }}.csv .
+        mv ./${{ inputs.min-io-asset-name }}.csv ${{ inputs.min-io-asset-name }}-$(date +%d-%m-%Y).csv
         aws s3 ls
-        aws s3 cp ./Supply_sample_$(date +%d-%m-%Y).csv s3://vrukl-bi-qb-dev-ingestion/snowflake/Lake/Transparent/Regular_Feeds/
+        aws s3 cp ./${{ inputs.min-io-asset-name }}-$(date +%d-%m-%Y).csv s3://vrukl-bi-qb-dev-ingestion/snowflake/Lake/Transparent/Regular_Feeds/
       shell: bash
     
