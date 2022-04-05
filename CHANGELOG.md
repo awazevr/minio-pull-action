@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/awazevr/minio-pull-action/compare/v1.2.0...v1.2.1) (2022-04-05)
+
+
+### Bug Fixes
+
+* added file extension ([e3aa448](https://github.com/awazevr/minio-pull-action/commit/e3aa4486dc45050fb2ff7da05c3747cffa4833d3))
+
 # [1.2.0](https://github.com/awazevr/minio-pull-action/compare/v1.1.8...v1.2.0) (2022-04-05)
 
 
